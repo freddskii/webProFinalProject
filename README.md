@@ -1,4 +1,4 @@
-# webProFinalProject
+# Final Project for Web Programming Lecture
 
 Design v1 
 ![img_alt](./img/login.png)
