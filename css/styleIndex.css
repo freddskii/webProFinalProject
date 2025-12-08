@@ -4,6 +4,13 @@
     --card-bg: #d3d3d3;
     --blue-accent: #3b82f6;
     --sidebar-width: 300px; 
+    --search-bar-height: 100px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; 
 }
 
 .main-layout {
@@ -14,7 +21,12 @@
     width: var(--sidebar-width);
     flex-shrink: 0;
     background-color: var(--sidebar-bg);
-    border-right: 1px solid #ccc; 
+    overflow-y: hidden; 
+}
+
+.bottom-bar {
+    background-color: var(--blue-accent);
+    margin-top: auto; 
 }
 
 .profile-icon {
@@ -48,9 +60,27 @@
     background-color: var(--blue-accent);
 }
 
+.search-bar {
+    position: fixed; 
+    
+    top: 0; 
+    left: var(--sidebar-width); 
+    right: 0;
+    
+    padding: 1.5rem; 
+    z-index: 10; 
+    background-color: rgba(240, 240, 240, 0.95); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .content {
     background-color: var(--content-bg);
-    overflow-y: auto;
+    flex-grow: 1;
+    overflow-y: scroll; 
+    
+    height: calc(100vh - var(--search-bar-height));
+    
+    margin-top: var(--search-bar-height);
 }
 
 .search-input {
@@ -61,6 +91,7 @@
 }
 
 .post-feed {
+    padding-top: 100px; 
     padding-bottom: 100px; 
 }
 
@@ -85,4 +116,8 @@
     border-radius: 50px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+}
+
+a{
+    text-decoration: none;
 }
