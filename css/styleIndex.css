@@ -1,0 +1,88 @@
+:root {
+    --sidebar-bg: #e0e0e0;
+    --content-bg: #f0f0f0;
+    --card-bg: #d3d3d3;
+    --blue-accent: #3b82f6;
+    --sidebar-width: 300px; 
+}
+
+.main-layout {
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid #ccc; 
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    color: #888; 
+}
+
+.nav-links {
+    padding: 1rem 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 1.5rem;
+    margin: 10px 0;
+    background-color: #c9c9c9;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.nav-link.active {
+    background-color: var(--blue-accent);
+    color: white;
+}
+
+.bottom-bar {
+    background-color: var(--blue-accent);
+}
+
+.content {
+    background-color: var(--content-bg);
+    overflow-y: auto;
+}
+
+.search-input {
+    background-color: #d3d3d3; 
+    border: none;
+    border-radius: 1.5rem;
+    height: 50px;
+}
+
+.post-feed {
+    padding-bottom: 100px; 
+}
+
+.post-card {
+    background-color: var(--card-bg); 
+    border-radius: 8px;
+    height: 300px; 
+    margin-bottom: 20px;
+}
+
+.post-card.large {
+    height: 600px; 
+}
+
+.post-btn {
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--blue-accent);
+    color: white;
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 50px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
