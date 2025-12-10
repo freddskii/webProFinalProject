@@ -36,24 +36,43 @@ html, body {
 }
 
 .nav-links {
-    padding: 1rem 0;
+    padding: 0;
 }
 
 .nav-link {
     display: block;
-    padding: 10px 1.5rem;
-    margin: 10px 0;
-    background-color: #c9c9c9;
+    padding: 10px 0; 
+    margin: 0; 
+    background-color: transparent; 
     color: #000;
     text-decoration: none;
     font-weight: 500;
-    border-radius: 4px;
-    margin-right: 15px;
+    border-radius: 0; 
+    margin-right: 0;
+    padding-left: 1.5rem; 
 }
 
 .nav-link.active {
     background-color: var(--blue-accent);
     color: white;
+    border-radius: 0;
+}
+
+.bottom-bar {
+    background-color: var(--blue-accent);
+    padding: 0; 
+    margin-top: auto;
+}
+
+.bottom-bar a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 1.5rem; 
+}
+
+.user-profile {
+    padding: 1.5rem; 
+    text-align: center; 
 }
 
 .bottom-bar {
@@ -72,6 +91,12 @@ html, body {
     background-color: rgba(240, 240, 240, 0.95); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.search-input {
+    background-color: #d3d3d3; 
+    border: none;
+    border-radius: 1.5rem;
+    height: 50px;
+}
 
 .content {
     background-color: var(--content-bg);
@@ -83,12 +108,6 @@ html, body {
     margin-top: var(--search-bar-height);
 }
 
-.search-input {
-    background-color: #d3d3d3; 
-    border: none;
-    border-radius: 1.5rem;
-    height: 50px;
-}
 
 .post-feed {
     padding-top: 100px; 
