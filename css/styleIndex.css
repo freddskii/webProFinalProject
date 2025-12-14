@@ -1,21 +1,29 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.main-layout {
+    min-height: 100vh;
+}
+
+.content {
+    background-color: var(--content-bg);
+    margin-left: var(--sidebar-width); 
+    min-height: 100vh; 
+    padding-top: var(--search-bar-height); 
+    flex-grow: 1;
+    width: calc(100% - var(--sidebar-width));
+}
+
 :root { 
-    --sidebar-width: 300px; 
+    --sidebar-width: 90px; 
     --search-bar-height: 80px; 
     --blue-primary: #3b82f6; 
     --gray-placeholder: #a0a0a0; 
     --blue-accent: #3b82f6;
     --content-bg: #f0f0f0;
     --card-bg: #d3d3d3;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    overflow: hidden; 
-}
-
-.main-layout {
-    min-height: 100vh;
 }
 
 .sidebar {
@@ -41,6 +49,7 @@ html, body {
     border-radius: 0;
     cursor: pointer;
     transition: transform 0.2s, opacity 0.2s;
+    font-size: 0.6rem;
 }
 
 .sidebar-box:hover {
@@ -123,15 +132,6 @@ html, body {
     border: none;
     border-radius: 1.5rem;
     height: 50px;
-}
-
-.content {
-    background-color: var(--content-bg);
-    margin-left: var(--sidebar-width); 
-    min-height: 100vh; 
-    overflow-y: auto; 
-    padding-top: var(--search-bar-height); 
-    flex-grow: 1;
 }
 
 .post-feed {
