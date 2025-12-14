@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const postFeed = document.getElementById('post-feed');
-    const contentArea = document.querySelector('.content');
     let isLoading = false;
     let page = 1;
 
@@ -46,11 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 0);
     };
 
-    contentArea.addEventListener('scroll', () => {
-        
+    window.addEventListener('scroll', () => {
+        if (isLoading) return;
+
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
         const scrollThreshold = 100; 
-        
-        if (contentArea.scrollHeight - contentArea.scrollTop <= contentArea.clientHeight + scrollThreshold) {
+
+        if (scrollHeight - scrollTop <= clientHeight + scrollThreshold) {
             loadMorePosts();
         }
     });
