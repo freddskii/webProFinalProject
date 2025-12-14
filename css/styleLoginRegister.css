@@ -39,3 +39,18 @@ body {
     font-size: 0.9rem;
     text-decoration: none;
 }
+
+.btn-google {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    border: 1px solid #ced4da; /* Light border */
+    font-size: 1rem;
+    height: 50px;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-weight: 500;
+}
+
+.btn-google:hover {
+    background-color: #f8f9fa; /* Slightly darker on hover */
+    border-color: #adb5bd;
+}

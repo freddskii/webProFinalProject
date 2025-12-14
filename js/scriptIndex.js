@@ -57,20 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadMorePosts(); 
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const postFeed = document.getElementById('post-feed');
-    const contentArea = document.querySelector('.content'); 
-    let isLoading = false;
-    let page = 1;
-    
-    contentArea.addEventListener('scroll', () => {
-        
-        const scrollThreshold = 100; 
-        
-        if (contentArea.scrollHeight - contentArea.scrollTop <= contentArea.clientHeight + scrollThreshold) {
-            loadMorePosts();
-        }
-    });
-
-});
