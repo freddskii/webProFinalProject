@@ -7,10 +7,10 @@
 # ConnetIn Application
 ## Laporan Proyek
 ## 1. Frontend & Backend Development
-    a.  Frontend
+a. Frontend
         
 
-    b.  Backend
+b. Backend
 
 ## 2. Database Implementation
 
