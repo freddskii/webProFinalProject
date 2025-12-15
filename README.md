@@ -64,27 +64,66 @@ Integrasi API juga dilakukan dengan menggunakan layanan OAuth dari google untuk 
 
 1. Pengujian Login dan Register Manual
 
+![](./img/1A.png)
+![](./img/1B.png)
+
 2. Pengujian Login dan Register menggunakan OAuth
+
+![](./img/2B.png)
+![](./img/2A.png)
 
 3. Uji Infinite Scroll selama data ada di Database
 
+![](./img/3A.png)
+![](./img/3B.png)
+
 4. Uji untuk melihat detail suatu pekerjaan
+
+![](./img/4A.png)
 
 5. Uji untuk menambahkan pekerjaan kedalam preferensi (ditambahkan ke Application / List untuk Aplikasi Pekerjaan)
 
+![](./img/5A.png)
+![](./img/5B.png)
+
 6. Uji untuk Menambah Pekerjaan secara manual (Admin)
+
+![](./img/6B.png)
+![](./img/6A.png)
 
 7. Uji Menghapus dan Edit Data Pekerjaan (Admin)
 
+![](./img/7A.png)
+![](./img/7B.png)
+
 8. Uji Mengganti data profil User (Admin dan Pengguna Biasa)
 
-9. Uji Moderasi Admin (Manajemen User)
+![](./img/8A.png)
+![](./img/8B.png)
 
-10. Uji Logout
+9. Uji Update Avatar Profil
+
+![](./img/9A.png)
+![](./img/9B.png)
+![](./img/9C.png)
+
+10. Uji Moderasi Admin (Manajemen User)
+
+![](./img/10A.png)
+![](./img/10B.png)
+![](./img/10C.png)
+![](./img/10E.png)
+![](./img/10F.png)
 
 11. Uji Populate Data dari API (Admin)
 
+Untuk testing lebih lengkapnya ada dalam demonstrasi aplikasi pada bagian akhir (pengujian tiap endpoint)
+
 ## Diagram Sistem
+
+![](./img/Untitled Diagram.jpg)
+
+![](./img/MVC.png)
 
 ## User Guide
 
