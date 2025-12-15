@@ -1,87 +1,148 @@
-| Nama | NRP | Kelas |
-| ---  | --- | ----------|
+| Nama                  | NRP        | Kelas               |
+| --------------------- | ---------- | ------------------- |
 | Ahmad Satrio Arrohman | 5025241061 | Pemrograman Web - B |
-| Ahsin Khuluqil Karim | 5025241063 | Pemrograman Web - B |
+| Ahsin Khuluqil Karim  | 5025241063 | Pemrograman Web - B |
 | Liem, Alfred Haryanto | 5025241100 | Pemrograman Web - B |
 
-# ConnetIn Application
+# ConnectIn Application
+
+LINK WEBSITE
+
+[link website deploy](http://gglb28.helioho.st)
+
+LINK YOUTUBE
+
+[Link Youtube](https://youtu.be/KYjM3Pe3IyA)
+
 ## Laporan Proyek
+
 ## 1. Frontend & Backend Development
-a. Frontend
-# Design v1 
 
-![img_alt](./img/design/login.png)
-![img_alt](./img/design/register.png)
-![img_alt](./img/design/dashboardAdmin.png)
-![img_alt](./img/design/dashboardUser.png)
-![img_alt](./img/design/editProfile.png)
-![img_alt](./img/design/mainPage.png)
+a. Frontend Development
 
-# Hasil Implementasi (raw)
-![img_alt](./img/rawImplementation/homePage.png)
-Nama file : `index.html` & `styleIndex.css` <br>
-Styling : Bootstrap & CSS  <br>
-Description : Page ini merupakan home page atau main page dari aplikasi ConnectIn. Terdapat sidebar minimalis dengan sejumlah 3 tombol. 2 tombol diatas yang mewakili home page dan dashboard page untuk admin dan user, serta tombol di bagian bawah yang mewakili tombol logout. 
+Frontend Development kami dimulai dengan membuat mock-up an sederhana yang menjadi dasar dari bentuk antarmuka aplikasi yang kami buat dengan memanfaatkan HTML, CSS, Javascript dan juga framework Bootstrap. Antar halaman kami pisah menggunakan file sehingga ketika pengguna mengakses URL atau path lain maka pengguna tersebut juga berganti halaman, tidak seperti SPA atau Single-Page App.
 
-![img_alt](./img/rawImplementation/editProfile.png)
-Nama file : `editProfile.html` & `styleIndex.css` <br>
-Styling : Bootstrap   <br>
-Description : Pagi edit profile ini tergabung dalam rumpun dashboard user dan admin. Isi page ini antara lain form untuk mengubah data - data dari akun kita, seperti `Callname`, `Username`, `Bio`, dan juga `Education`. Terdapat juga placeholder untuk profile pic image pada bagian tengah atas. 
+HTML digunakan untuk membuat kerangka dasar dari tampilan antarmuka web kami yang kemudian dikombinasikan dengan CSS dan framework Bootstrap dan terdapat banyak sekali Javascript karena dilakukannya kustomisasi pemanggilan komponen per-page.
 
+Bagian Front-End kami tergabung dalam kata "V" yang berarti View yang merupakan salah satu bagian dari arsitektur perangkat lunak yang tidak kalah populer yakni "MVC" atau memiliki kepanjangan Model, View dan Controller.
 
-![img_alt](./img/rawImplementation/login.png)
-Nama file : `login.html` & `styleLoginRegister.css` <br>
-Styling : Bootstrap & CSS  <br>
-Description : Implementasi login page secara simple, dimana untuk login maka membutuhkan kredensial user seperti username dan password serta dapat login menggunakan google. 
+b. Backend Development
 
+Backend Development disini kami menggunakan konsep MVC dan API-based untuk komunikasi antara server dan client. Penggunaan API-based bertujuan agar pada file yang menampilkan sisi Front-End tidak langsung bersinggungan dengan Back-End atau secara sederhana, kami mencoba memisahkan peran Server yang hanya digunakan untuk penyajian, pengolahan dan pusat logika bisnis aplikasi. Sedangkan untuk sisi Interface atau Front-End menggunakan utilitas hampir non-PHP yakni dengan menggunakan Vanilla Javascript untuk melakukan prosedur pemanggilan "API".
 
-![img_alt](./img/rawImplementation/register.png)
-Nama file : `register.html` & `styleLoginRegister.css` <br>
-Styling : Bootstrap & CSS   <br>
-Description : Implementasi register page secara simple, dimana untuk registrasi membutuhkan username, password, dan juga confirm password. 
+API = Application Programming Interface, berarti server kami akan terdapat endpoint yang hanya dikhususkan untuk hit endpoint API yang hanya akan menerima dan/atau mengembalikan data baik dari/menuju Server.
 
-
-Dengan penambahan : 
-![img_alt](./img/rawImplementation/404.png)
-Nama file : `404.html` & `styleLoginRegister.css` <br>
-Styling : Bootstrap & CSS   <br>
-Description : Page untuk 404 not found. 
-
-
-![img_alt](./img/rawImplementation/403.png)
-Nama file : `403.html` & `styleLoginRegister.css` <br>
-Styling : Bootstrap & CSS   <br>
-Description : Page untuk 403 forbidden. 
-
-
-b. Backend
+Karena menggunakan arsitektur MVC maka dari kami memutuskan untuk mempermudah development menggunakan versi OOP dari PHP untuk memudahkan pengelolaan kode dan logika bisnis dan juga agar terlihat pemisahan fungsi antara M, V, dan C. Kemudian juga menggunakan package manager yang didukung oleh PHP yakni Composer untuk dapat menggunakan PSR-4 yang sangat berguna untuk kemudahan development.
 
 ## 2. Database Implementation
-![img_alt](./img/db/db1.png) <br>
-Deskripsi : Pada potongan gambar database diatas, dapat terlihat beberapa tabel yang mewakili data-data yang berhubungan dengan user, seperti `user_profile`, `user_job_history`, `user_social_link`, `saved_job`, dan `users`. `user_profile` menyimpan data-data seperti user id, biodata, hingga foto profil dari akun user. `user_job_history` menyimpan nama pekerjaan, nama perusahaan, tanggal apply, status, dan kapan application dibuat. `user_social_link` sendiri berisi user id, platform, dan url nya. Tabel `saved_job` bertugas untuk menyimpan data pekerjaan yang di save oleh user, dan terakhir untuk tabel `user` menyimpan credential dari user seperti username, password, email, dan lain-lain. 
 
+Database kami terdiri dari 8 tabel yang berbeda yang masing-masing memiliki fungsi dan perannya masing-masing, seperti yang ada pada gambar PDM atau Physical Data Model yang menggambarkan relasi-relasi serta properti yang dimilliki oleh setiap tabel. Terdapat 1 tabel lagi namun hanya digunakan sebagai tabel intermedit.
 
-![img_alt](./img/db/db2.png) <br>
-Deskripsi : Untuk potongan gambar kedua ini, berfokus pada tabel-tabel yang berhubungan dengan pekerjaan itu sendiri, meliputi tabel `companies`, `location`, `job_source`, dan `jobs`. Tabel `companies` merupakan tabel yang menyimpan data-data perusahaan seperti nama dari perusahaan itu, logo, dan website perusahaan. `jobs` merupakan tabel yang menyimpan detail setiap lowongan pekerjaan. Data yang tersimpan mencakup judul, deskripsi, apply_link, dan detail gaji. `locations` akan menyimpan informasi geografis (tempat) yang terkait dengan pekerjaan atau perusahaan, termasuk city, state, country, hingga koordinat latitude dan longitude. `job_sources` bertugas untuk menyimpan sumber asal dari data pekerjaan (nama).
+![](./img/db1.png)
+![](./img/db2.png)
+![](./img/db3.png)
+![](./img/db4.png)
 
+Penjelasan singkat tiap tabel
 
-![img_alt](./img/db/db3.png) <br>
-Deskripsi : Pada potongan gambar ketiga ini terdapat 3 tabel terakhir, yakni `job_categories`, `categories`, dan `applications`. `job_categories` akan menyimpan job id dan juga kategorinya. `categories` merupakan tabel yang terhubung langsung dengan `job_categories`, menyediakan nama untuk job id. Terakhir, tabel `applications` akan menyimpan data status application dari user. 
-
+- Users -> menampung data user seperti username, placeholder, password, api_token
+- Jobs -> tabel utama penyimpanan data pekerjaan yang diperoleh melalui API eksternal
+- Locations -> tabel untuk menyimpan data lokasi
+- Companies -> tabel untuk menyimpan data sebuah perusahaan (logo, nama, website)
+- Job_Sources -> tabel yang berisi entri data yang menunjukkan asal data diambil (seperti JSearch)
+- Categories -> tabel untuk menyimpan kategori-kategori pekerjaan
+- User Profiles -> tabel untuk menyimpan data user (placeholder, avatar, bio, last education)
+- User Job History -> tabel untuk menyimpan data histori pekerjaan suatu user
 
 ## 3. Integrasi API
 
+Integrasi API dilakukan dengan menggunakan API Fetch yang berasal dari Javascript sebagai Requester dan Server PHP yang akan listen secara terus menerus koneksi HTTP yang dibuat oleh Requester dan mengembalikan Response berupa data JSON atau data HTML (View).
+
+Integrasi API juga dilakukan dengan menggunakan layanan OAuth dari google untuk memudahkan proses login tanpa harus membuat akun baru secara manual. API eksternal lain yang juga diintegrasikan adalah GeoFetch API untuk mendapatkan alamat atau tempat suatu entri pekerjaan yang tidak lengkap datanya dan juga penggunaan JSearch API untuk fetch data Job API baru-baru ini.
+
+## Testing
+
+1. Pengujian Login dan Register Manual
+
+![](./img/1A.png)
+![](./img/1B.png)
+
+2. Pengujian Login dan Register menggunakan OAuth
+
+![](./img/2B.png)
+![](./img/2A.png)
+
+3. Uji Infinite Scroll selama data ada di Database
+
+![](./img/3A.png)
+![](./img/3B.png)
+
+4. Uji untuk melihat detail suatu pekerjaan
+
+![](./img/4A.png)
+
+5. Uji untuk menambahkan pekerjaan kedalam preferensi (ditambahkan ke Application / List untuk Aplikasi Pekerjaan)
+
+![](./img/5A.png)
+![](./img/5B.png)
+
+6. Uji untuk Menambah Pekerjaan secara manual (Admin)
+
+![](./img/6B.png)
+![](./img/6A.png)
+
+7. Uji Menghapus dan Edit Data Pekerjaan (Admin)
+
+![](./img/7A.png)
+![](./img/7B.png)
+
+8. Uji Mengganti data profil User (Admin dan Pengguna Biasa)
+
+![](./img/8A.png)
+![](./img/8B.png)
+
+9. Uji Update Avatar Profil
+
+![](./img/9A.png)
+![](./img/9B.png)
+![](./img/9C.png)
+
+10. Uji Moderasi Admin (Manajemen User)
+
+![](./img/10A.png)
+![](./img/10B.png)
+![](./img/10C.png)
+![](./img/10E.png)
+![](./img/10F.png)
+
+11. Uji Populate Data dari API (Admin)
+
+Untuk testing lebih lengkapnya ada dalam demonstrasi aplikasi pada bagian akhir (pengujian tiap endpoint)
 
 ## Diagram Sistem
 
+![](./img/Untitled Diagram.jpg)
+
+![](./img/MVC.png)
+
+Sistem kami memakai arsitektur MVC yang dimmana akan memisahkan peran kode berdasarkan prinsip dari MVC itu sendiri. M yang menunjukkan Model berarti kode-kode yang termasuk dalam bagian ini akan berhubungan langsung dengan sumber data / model. V yang berarti View berarti bagian aplikasi ini akan berhadapan langsung dengan user melalui interface/antar-muka yang ada. Dan terakhir adalah C yang dimaknai Controller, yang berarti bagian arsitektur ini berisikan bisnis logika utama dan penghubung dari V dan M.
 
 ## User Guide
 
+Pengguna pertama akan disuguhkan dengan halaman login atau register dimana pengguna akan diminta untuk membuat akun dan memasukkan akun. Atau secara alternatif menggunkaan layanan OAuth Google.
 
+Setelah pengguna masuk aplikasi, pengguna dapat langsung melihat daftar-daftar pekerjaan beserta detailnya, kemudian terdapat tombol untuk menambahkan suatu pekerjaan ke daftar wishlist atau wish application nya.
+
+Pengguna kemudian dapat merubah placeholder, bio, riwayat pendidikan paling terakhir dan mengganti avatar.
+
+Pengguna kemudian dapat melakukan un-save pada pekerjaan yang sudah di-save atau masuk kedalam wishlist melalui dashboard user yang dapat diakses pada sidebar di panel kiri.
+
+Pengguna dapat mencari pekerjaan menggunakan fitur search yang ada pada main page dengan mengetikkan keyword.
 
 ## Pembagian Jobdesk
-| Nama | NRP | Jobdesk |
-| --- | --- | --- |
-| Ahmad Satrio Arrohman | 5025241061 | Backend |
-| Ahsin Khuluqil Karim | 5025241063 | Frontend |
+
+| Nama                  | NRP        | Jobdesk          |
+| --------------------- | ---------- | ---------------- |
+| Ahmad Satrio Arrohman | 5025241061 | Backend          |
+| Ahsin Khuluqil Karim  | 5025241063 | Frontend         |
 | Liem, Alfred Haryanto | 5025241100 | UI/UX & Frontend |
