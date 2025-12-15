@@ -6,6 +6,14 @@
 
 # ConnectIn Application
 
+LINK WEBSITE
+
+[link website deploy](http://gglb28.helioho.st)
+
+LINK YOUTUBE
+
+[Link Youtube](http://youtube.com)
+
 ## Laporan Proyek
 
 ## 1. Frontend & Backend Development
