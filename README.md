@@ -121,7 +121,7 @@ Untuk testing lebih lengkapnya ada dalam demonstrasi aplikasi pada bagian akhir 
 
 ## Diagram Sistem
 
-![](./img/Untitled Diagram.jpg)
+![](./img/UntitledDiagram.jpg)
 
 ![](./img/MVC.png)
 
