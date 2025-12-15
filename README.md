@@ -30,7 +30,10 @@ Karena menggunakan arsitektur MVC maka dari kami memutuskan untuk mempermudah de
 
 Database kami terdiri dari 8 tabel yang berbeda yang masing-masing memiliki fungsi dan perannya masing-masing, seperti yang ada pada gambar PDM atau Physical Data Model yang menggambarkan relasi-relasi serta properti yang dimilliki oleh setiap tabel. Terdapat 1 tabel lagi namun hanya digunakan sebagai tabel intermedit.
 
-[Gambar]
+![](./img/Screenshot From 2025-12-14 09-52-45.png)
+![](./img/Screenshot From 2025-12-14 09-53-13.png)
+![](./img/Screenshot From 2025-12-14 09-53-33.png)
+![](./img/Screenshot From 2025-12-14 09-54-07.png)
 
 Penjelasan singkat tiap tabel
 
