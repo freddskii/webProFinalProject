@@ -15,6 +15,7 @@ class Company extends Model
 
     return (int) $stmt->fetchColumn();
   }
+
   public function firstOrCreate(string $name, string $logo = "", string $website = ""): int
   {
     $stmt = $this->db->prepare("SELECT id FROM companies WHERE name = :name");

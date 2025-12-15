@@ -47,7 +47,7 @@ class JobSeeder
     $companyId  = $this->insertCompany($job);
     $locationId = $this->insertLocation($job);
 
-    if($sourceId == 0 || $companyId == 0 || $locationId == 0){
+    if ($sourceId == 0 || $companyId == 0 || $locationId == 0) {
       return;
     }
 
@@ -198,38 +198,38 @@ class JobSeeder
   }
 
   private static function enrichWithCoordinates(array $job): array
-    {
-        // 1. Check if coordinates are already present and valid
-        if (isset($job['lat']) && $job['lat'] !== null && $job['lat'] != 0) {
-            return $job; // Coordinates are good, no need to fetch
-        }
-
-        // 2. Build the query string for GeoFetch
-        $locationQuery = '';
-        if (!empty($job['city']) && !empty($job['country'])) {
-            $locationQuery = "{$job['city']}, {$job['country']}";
-        } elseif (!empty($job['location'])) {
-            $locationQuery = $job['location']; // Fallback to the raw location string
-        }
-
-        if (empty($locationQuery)) {
-            return $job; // Cannot geocode without location data
-        }
-
-        // 3. Call the GeoFetch utility
-        $geoData = GeoFetch::getLatLon($locationQuery);
-
-        // 4. Process the response
-        if (!empty($geoData) && is_array($geoData)) {
-            // geocode.maps.co returns an array of matches, we take the first one
-            $firstMatch = $geoData[0] ?? null; 
-            
-            if ($firstMatch && isset($firstMatch['lat']) && isset($firstMatch['lon'])) {
-                $job['lat'] = floatval($firstMatch['lat']);
-                $job['lon'] = floatval($firstMatch['lon']);
-            }
-        }
-
-        return $job;
+  {
+    // 1. Check if coordinates are already present and valid
+    if (isset($job['lat']) && $job['lat'] !== null && $job['lat'] != 0) {
+      return $job; // Coordinates are good, no need to fetch
     }
+
+    // 2. Build the query string for GeoFetch
+    $locationQuery = '';
+    if (!empty($job['city']) && !empty($job['country'])) {
+      $locationQuery = "{$job['city']}, {$job['country']}";
+    } elseif (!empty($job['location'])) {
+      $locationQuery = $job['location']; // Fallback to the raw location string
+    }
+
+    if (empty($locationQuery)) {
+      return $job; // Cannot geocode without location data
+    }
+
+    // 3. Call the GeoFetch utility
+    $geoData = GeoFetch::getLatLon($locationQuery);
+
+    // 4. Process the response
+    if (!empty($geoData) && is_array($geoData)) {
+      // geocode.maps.co returns an array of matches, we take the first one
+      $firstMatch = $geoData[0] ?? null;
+
+      if ($firstMatch && isset($firstMatch['lat']) && isset($firstMatch['lon'])) {
+        $job['lat'] = floatval($firstMatch['lat']);
+        $job['lon'] = floatval($firstMatch['lon']);
+      }
+    }
+
+    return $job;
+  }
 }
