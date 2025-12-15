@@ -12,7 +12,7 @@ LINK WEBSITE
 
 LINK YOUTUBE
 
-[Link Youtube](http://youtube.com)
+[Link Youtube](https://youtu.be/KYjM3Pe3IyA)
 
 ## Laporan Proyek
 
@@ -124,6 +124,8 @@ Untuk testing lebih lengkapnya ada dalam demonstrasi aplikasi pada bagian akhir 
 ![](./img/Untitled Diagram.jpg)
 
 ![](./img/MVC.png)
+
+Sistem kami memakai arsitektur MVC yang dimmana akan memisahkan peran kode berdasarkan prinsip dari MVC itu sendiri. M yang menunjukkan Model berarti kode-kode yang termasuk dalam bagian ini akan berhubungan langsung dengan sumber data / model. V yang berarti View berarti bagian aplikasi ini akan berhadapan langsung dengan user melalui interface/antar-muka yang ada. Dan terakhir adalah C yang dimaknai Controller, yang berarti bagian arsitektur ini berisikan bisnis logika utama dan penghubung dari V dan M.
 
 ## User Guide
 
