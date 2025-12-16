@@ -14,6 +14,10 @@ LINK YOUTUBE
 
 [Link Youtube](https://youtu.be/KYjM3Pe3IyA)
 
+LINK REPOSITORY DEPLOY
+
+[Repository](https://github.com/lemodoescoding/deploy_php_pweb)
+
 ## Laporan Proyek
 
 ## 1. Frontend & Backend Development
